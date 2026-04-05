@@ -1,0 +1,23 @@
+1. What occurs when the user selects "Cancel"?
+
+Answer: Clicking "Cancel" returns a value of 2 (JOptionPane.CANCEL_OPTION). Because your code only checks for a "Yes" (YES_OPTION), this creates a false condition, causing the program to display "No" and then terminate.
+
+2. How can the button options be customized (e.g., restricting to "Yes" and "No", or using custom text like "I do" and "I don't")?
+
+Answer: * To restrict choices to just "Yes" and "No": You simply modify the optionType argument within the showConfirmDialog method.
+* Updated code: int option = JOptionPane.showConfirmDialog(null, "Message", "Title", JOptionPane.YES_NO_OPTION);
+
+To apply custom button text (like "I do" and "I don't"): You will need to switch to the showOptionDialog method. This function lets you supply an array of Strings that dictate the exact labels for each button.
+
+Example:
+
+Java
+Object[] customChoices = {"I do", "I don't"};
+int n = JOptionPane.showOptionDialog(null,
+    "Do you want to proceed?",
+    "Selection",
+    JOptionPane.YES_NO_OPTION,
+    JOptionPane.QUESTION_MESSAGE,
+    null,    
+    customChoices,  
+    customChoices[0]); // Sets "I do" as the default highlighted button
