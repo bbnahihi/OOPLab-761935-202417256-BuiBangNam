@@ -1,0 +1,12 @@
+Question: Is JAVA a Pass by Value or a Pass by Reference programming language?
+Answer: Java is strictly strictly PASS BY VALUE.
+
+Giải thích kết quả của bài TestPassingParameter:
+1. Tại sao hàm swap(jungleDVD, cinderellaDVD) không làm thay đổi title?
+- Trong Java, khi truyền object vào hàm, nó truyền "giá trị của tham chiếu" (bản copy của địa chỉ bộ nhớ). 
+- Biến o1 và o2 trong hàm swap chỉ là bản copy. Khi gán o1 = o2, ta chỉ đang hoán đổi việc trỏ bộ nhớ của 2 biến copy này với nhau, hoàn toàn không ảnh hưởng đến biến gốc jungleDVD và cinderellaDVD ở hàm main.
+
+2. Tại sao hàm changeTitle thay đổi được title của JungleDVD?
+- Mặc dù hàm nhận được một bản copy của tham chiếu (dvd), nhưng bản copy này VẪN trỏ đến cùng một vùng nhớ chứa object JungleDVD thật.
+- Khi gọi lệnh dvd.setTitle(title), nó tác động trực tiếp lên object thật trong bộ nhớ, nên tên bị đổi thành Cinderella.
+- Ở dòng lệnh cuối: dvd = new DigitalVideoDisc(oldTitle); bản copy 'dvd' được trỏ sang một object hoàn toàn mới, nhưng thao tác này vô nghĩa với hàm main vì biến gốc jungleDVD vẫn đang trỏ vào object cũ (vừa bị đổi tên).
