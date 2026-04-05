@@ -6,6 +6,50 @@ public class DigitalVideoDisc {
     private String director;
     private int length;
     private float cost;
+    
+    private static int nbDigitalVideoDiscs = 0;
+    private int id; 
+
+    public DigitalVideoDisc(String title) {
+        super();
+        this.title = title;
+ 
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
+    }
+
+    public DigitalVideoDisc(String category, String title, float cost) {
+        super();
+        this.category = category;
+        this.title = title;
+        this.cost = cost;
+
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
+    }
+
+    public DigitalVideoDisc(String director, String category, String title, float cost) {
+        super();
+        this.director = director;
+        this.category = category;
+        this.title = title;
+        this.cost = cost;
+
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
+    }
+
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+        super();
+        this.title = title;
+        this.category = category;
+        this.director = director;
+        this.length = length;
+        this.cost = cost;
+
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
+    }
 
     public String getTitle() {
         return title;
@@ -13,10 +57,6 @@ public class DigitalVideoDisc {
 
     public String getCategory() {
         return category;
-    }
-
-    public String getDirectory() {
-        return director;
     }
 
     public String getDirector() {
@@ -31,35 +71,11 @@ public class DigitalVideoDisc {
         return cost;
     }
 
-    public DigitalVideoDisc(String title) {
-        this.title = title;
-        this.category = "";
-        this.director = "";
-        this.length = 0;
-        this.cost = 0.0f;
+    public int getId() {
+        return id;
     }
 
-    public DigitalVideoDisc(String title, String category, float cost) {
+    public void setTitle(String title) {
         this.title = title;
-        this.category = category;
-        this.director = "";
-        this.length = 0;
-        this.cost = cost;
     }
-
-    public DigitalVideoDisc(String title, String category, String director, float cost) {
-        this.title = title;
-        this.category = category;
-        this.director = director;
-        this.length = 0;
-        this.cost = cost;
-    }
-
-    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        this.title = title;
-        this.category = category;
-        this.director = director;
-        this.length = length;
-        this.cost = cost;
-    }   
 }
