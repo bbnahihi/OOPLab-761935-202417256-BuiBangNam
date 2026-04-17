@@ -24,4 +24,7 @@ public class Book extends Media {
     public List<String> getAuthors() {
         return authors;
     }
+    public String toString() {
+        return "Book - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getCost() + " $";
+    }
 }
