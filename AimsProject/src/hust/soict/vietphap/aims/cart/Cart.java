@@ -56,4 +56,11 @@ public class Cart {
             System.out.println("No match found for title: " + title);
         }
     }
+    public void sortByTitleCost() {
+        java.util.Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+    }
+
+    public void sortByCostTitle() {
+        java.util.Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+    }
 }
