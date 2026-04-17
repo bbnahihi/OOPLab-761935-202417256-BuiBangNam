@@ -38,4 +38,7 @@ public class CompactDisc extends Disc {
             track.play();
         }
     }
+    public String toString() {
+        return "CD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getArtist() + " - " + this.getLength() + ": " + this.getCost() + " $";
+    }
 }
