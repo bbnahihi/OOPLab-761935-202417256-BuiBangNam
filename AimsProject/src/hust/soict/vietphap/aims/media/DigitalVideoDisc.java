@@ -1,8 +1,6 @@
 package hust.soict.vietphap.aims.media;
 
-public class DigitalVideoDisc extends Media {
-    private String director;
-    private int length;
+public class DigitalVideoDisc extends Disc {
     private static int nbDigitalVideoDiscs = 0;
 
     public DigitalVideoDisc(String title) {
@@ -20,7 +18,7 @@ public class DigitalVideoDisc extends Media {
     }
 
     public DigitalVideoDisc(String director, String category, String title, float cost) {
-        this.director = director;
+        this.setDirector(director);
         this.setCategory(category);
         this.setTitle(title);
         this.setCost(cost);
@@ -31,19 +29,11 @@ public class DigitalVideoDisc extends Media {
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         this.setTitle(title);
         this.setCategory(category);
-        this.director = director;
-        this.length = length;
+        this.setDirector(director);
+        this.setLength(length);
         this.setCost(cost);
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public int getLength() {
-        return length;
     }
 
     @Override
