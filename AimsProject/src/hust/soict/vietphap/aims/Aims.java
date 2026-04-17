@@ -1,7 +1,7 @@
 package hust.soict.vietphap.aims;
 
 import hust.soict.vietphap.aims.cart.Cart;
-import hust.soict.vietphap.aims.disc.DigitalVideoDisc;
+import hust.soict.vietphap.aims.media.DigitalVideoDisc;
 
 public class Aims {
     public static void main(String[] args) {

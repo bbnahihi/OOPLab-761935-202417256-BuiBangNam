@@ -1,6 +1,6 @@
 package hust.soict.vietphap.test.store;
 
-import hust.soict.vietphap.aims.disc.DigitalVideoDisc;
+import hust.soict.vietphap.aims.media.DigitalVideoDisc;
 import hust.soict.vietphap.aims.store.Store;
 
 public class StoreTest {

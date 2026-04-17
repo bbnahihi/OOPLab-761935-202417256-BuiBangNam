@@ -1,6 +1,6 @@
 package hust.soict.vietphap.test.disc;
 
-import hust.soict.vietphap.aims.disc.DigitalVideoDisc;
+import hust.soict.vietphap.aims.media.DigitalVideoDisc;
 
 public class TestPassingParameter {
     public static void main(String[] args) {
