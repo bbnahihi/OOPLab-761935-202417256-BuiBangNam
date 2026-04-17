@@ -16,4 +16,8 @@ public class Track {
     public int getLength() {
         return length;
     }
+    public void play() {
+        System.out.println("Playing Track: " + this.getTitle());
+        System.out.println("Track length: " + this.getLength());
+    }
 }

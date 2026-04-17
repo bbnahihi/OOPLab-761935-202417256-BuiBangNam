@@ -26,12 +26,16 @@ public class CompactDisc extends Disc {
         }
     }
 
-    @Override
     public int getLength() {
         int totalLength = 0;
         for (Track track : tracks) {
             totalLength += track.getLength();
         }
         return totalLength;
+    }
+    public void play() {
+        for (Track track : tracks) {
+            track.play();
+        }
     }
 }
