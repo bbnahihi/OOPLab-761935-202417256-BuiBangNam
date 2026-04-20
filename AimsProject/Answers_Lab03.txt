@@ -1,0 +1,29 @@
+1. What class should implement the Comparable interface? 
+
+Lớp Media nên implement interface Comparable<Media>. Vì Media là lớp cha cao nhất, việc implement ở đây sẽ tạo ra một quy tắc sắp xếp mặc định chung cho tất cả các sản phẩm trong giỏ hàng.
+
+2. In those classes, how should you implement the compareTo() method to reflect the ordering that we want? 
+
+Trong lớp Media, ghi đè (override) phương thức compareTo(Media other).
+
+Đầu tiên, dùng hàm compareTo() của chuỗi (String) để so sánh title.
+
+Nếu title khác nhau, trả về kết quả đó.
+
+Nếu title giống hệt nhau (kết quả so sánh = 0), ta tiếp tục so sánh thuộc tính cost.
+
+3. Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach? 
+
+Không (No). * Interface Comparable chỉ cho phép định nghĩa duy nhất một quy tắc sắp xếp tự nhiên (Natural Ordering) cho một đối tượng thông qua hàm compareTo().
+
+Để có nhiều luật sắp xếp khác nhau tùy ý, bắt buộc phải sử dụng cách tiếp cận tạo nhiều class Comparator riêng biệt.
+
+4. Suppose the DVDs have a different ordering rule from the other media types... How would you modify your code to allow this? (Nếu DVD có luật sắp xếp riêng: Title -> giảm dần Length -> Cost, thì sửa code thế nào?)
+
+Ghi đè (Override) lại phương thức compareTo(Media other) trực tiếp bên trong lớp DigitalVideoDisc.
+
+Logic bên trong hàm compareTo của DVD sẽ kiểm tra xem tham số truyền vào (other) có phải là DigitalVideoDisc hay không (dùng instanceof).
+
+Nếu đúng là DVD: So sánh title trước. Nếu giống title, chuyển sang so sánh length (đảo ngược thứ tự trừ để sắp xếp giảm dần). Nếu length cũng giống nhau thì mới so sánh cost.
+
+Nếu other không phải là DVD (chỉ là Media bình thường): Gọi hàm super.compareTo(other) để đẩy việc so sánh về lại cho luật mặc định của lớp cha Media.
